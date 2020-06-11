@@ -29,16 +29,24 @@
 #include "MicroBitSAPanic.h"
 
 
-#define mbsap_MAGIC 0x21444153
+// Hex and binary will contain 53 41 45 50 (SAEP)
+// followed by 2 bytes code, 2 bytes iterations
+#define SAEP_MAGIC 0x50454153  //StandAloneErrorProgram
 
-//params[1] is the error number
-//params[1] is the iterations
-const uint32_t params[3] = { mbsap_MAGIC, 71, 0 };
+typedef struct paramStr
+{
+    uint32_t magic;
+    uint16_t code;
+    uint16_t iterations;
+} paramStr;
+
+
+paramStr params = { SAEP_MAGIC, 70, 0 };
 
 
 int main(void)
 {
     //__disable_irq();
-    microbit_sapanic( params[1], params[2]);
+    microbit_sapanic( params.code, params.iterations);
     NVIC_SystemReset();
 }

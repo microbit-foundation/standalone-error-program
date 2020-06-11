@@ -26,7 +26,7 @@ DEALINGS IN THE SOFTWARE.
 #include "MicroBitSAPanicFont.h"
 
 
-const unsigned char pendolino3_digits[50] =
+const unsigned char pendolino3_digits[ MICROBIT_FONT_WIDTH * 10] =
 {
     0xc, 0x92, 0x52, 0x52, 0x4c,
     0x4, 0x8c, 0x84, 0x84, 0x8e,
@@ -41,7 +41,7 @@ const unsigned char pendolino3_digits[50] =
 };
 
 
-const unsigned char pendolino3_E[5] =
+const unsigned char pendolino3_E[ MICROBIT_FONT_WIDTH] =
 {
     0x1e, 0xd0, 0x1c, 0x90, 0x1e
 };

@@ -30,7 +30,14 @@ SOFTWARE.
 extern "C" {
 #endif
 
-
+/*
+ * microbit_sapanic
+ *
+ * Show a panic code message
+ *
+ * @param   code        A number between 0 and 999
+ * @param   iterations  Number of times to show the message or zero to show forever
+ */
 extern void microbit_sapanic( int statusCode, int iterations);
 
 

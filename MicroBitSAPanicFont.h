@@ -26,9 +26,6 @@ DEALINGS IN THE SOFTWARE.
 #ifndef MICROBIT_SAPANIC_FONT_H
 #define MICROBIT_SAPANIC_FONT_H
 
-extern const unsigned char pendolino3_digits[50];
-extern const unsigned char pendolino3_E[5];
-
 //#include "mbed.h"
 //#include "MicroBitConfig.h"
 //
@@ -36,6 +33,12 @@ extern const unsigned char pendolino3_E[5];
 //#define MICROBIT_FONT_HEIGHT 5
 //#define MICROBIT_FONT_ASCII_START 32
 //#define MICROBIT_FONT_ASCII_END 126
+
+
+extern const unsigned char pendolino3_digits[ MICROBIT_FONT_WIDTH * 10];
+
+extern const unsigned char pendolino3_E[ MICROBIT_FONT_WIDTH];
+
 //
 ///**
 //  * Class definition for a MicrobitFont
