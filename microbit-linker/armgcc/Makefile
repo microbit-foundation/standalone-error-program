@@ -1,5 +1,5 @@
 PROJECT_NAME     := standalone-error-program
-TARGETS          := nrfx_nrf52833_xxaa
+TARGETS          := linker_nrf52833_xxaa
 OUTPUT_DIRECTORY := _build
 
 PROJ_DIR := ../..
@@ -7,7 +7,7 @@ NRFX_ROOT := ../../nrfx
 NRFXSDK_ROOT := ../../nrfx-support
 TOOLCHAIN_ROOT := ../../toolchain
 
-$(OUTPUT_DIRECTORY)/nrfx_nrf52833_xxaa.out: \
+$(OUTPUT_DIRECTORY)/linker_nrf52833_xxaa.out: \
   LINKER_SCRIPT  := gcc_nrf52.ld
 
 # Source files common to all targets
@@ -16,7 +16,7 @@ SRC_FILES += \
   $(NRFX_ROOT)/mdk/system_nrf52833.c \
   $(PROJ_DIR)/MicroBitSAPanicFont.c \
   $(PROJ_DIR)/MicroBitSAPanic.c \
-  $(PROJ_DIR)/main_forever.c \
+  $(PROJ_DIR)/main_linker.c \
 
 # Include folders common to all targets
 INC_FOLDERS += \
@@ -72,10 +72,10 @@ LDFLAGS += -Wl,--gc-sections
 # use newlib in nano version
 LDFLAGS += --specs=nano.specs
 
-nrfx_nrf52833_xxaa: CFLAGS += -D__HEAP_SIZE=256
-nrfx_nrf52833_xxaa: CFLAGS += -D__STACK_SIZE=256
-nrfx_nrf52833_xxaa: ASMFLAGS += -D__HEAP_SIZE=256
-nrfx_nrf52833_xxaa: ASMFLAGS += -D__STACK_SIZE=256
+linker_nrf52833_xxaa: CFLAGS += -D__HEAP_SIZE=256
+linker_nrf52833_xxaa: CFLAGS += -D__STACK_SIZE=256
+linker_nrf52833_xxaa: ASMFLAGS += -D__HEAP_SIZE=256
+linker_nrf52833_xxaa: ASMFLAGS += -D__STACK_SIZE=256
 
 # Add standard libraries at the very end of the linker input, after all objects
 # that may need symbols provided by these libraries.
@@ -85,12 +85,12 @@ LIB_FILES += -lc -lnosys -lm
 .PHONY: default help
 
 # Default target - first one defined
-default: nrfx_nrf52833_xxaa
+default: linker_nrf52833_xxaa
 
 # Print all targets that can be built
 help:
 	@echo following targets are available:
-	@echo		nrfx_nrf52833_xxaa
+	@echo		linker_nrf52833_xxaa
 	@echo		flash_softdevice
 	@echo		sdk_config - starting external tool for editing sdk_config.h
 	@echo		flash      - flashing binary
@@ -104,8 +104,8 @@ $(foreach target, $(TARGETS), $(call define_target, $(target)))
 
 # Flash the program
 flash: default
-	@echo Flashing: $(OUTPUT_DIRECTORY)/nrfx_nrf52833_xxaa.hex
-	nrfjprog -f nrf52 --program $(OUTPUT_DIRECTORY)/nrfx_nrf52833_xxaa.hex --sectorerase
+	@echo Flashing: $(OUTPUT_DIRECTORY)/linker_nrf52833_xxaa.hex
+	nrfjprog -f nrf52 --program $(OUTPUT_DIRECTORY)/linker_nrf52833_xxaa.hex --sectorerase
 	nrfjprog -f nrf52 --reset
 
 # Flash softdevice

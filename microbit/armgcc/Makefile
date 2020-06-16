@@ -14,7 +14,7 @@ SRC_FILES += \
   $(SDK_ROOT)/modules/nrfx/mdk/system_nrf52833.c \
   $(PROJ_DIR)/MicroBitSAPanicFont.c \
   $(PROJ_DIR)/MicroBitSAPanic.c \
-  $(PROJ_DIR)/main.c \
+  $(PROJ_DIR)/main_iterations.c \
 
 # Include folders common to all targets
 INC_FOLDERS += \
@@ -49,6 +49,7 @@ CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 # keep every function in a separate section, this allows linker to discard unused ones
 CFLAGS += -ffunction-sections -fdata-sections -fno-strict-aliasing
 CFLAGS += -fno-builtin -fshort-enums
+CFLAGS += -Dmicrobit_sapanic_ITERATIONS=1
 
 # C++ flags common to all targets
 CXXFLAGS += $(OPT)
