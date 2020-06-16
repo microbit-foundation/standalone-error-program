@@ -138,7 +138,7 @@ SOFTWARE.
 
 // Delay cycles after each character
 #ifndef microbit_sapanic_CHARDELAY
-#define microbit_sapanic_CHARDELAY      10000
+#define microbit_sapanic_CHARDELAY      100000
 #endif
 
 
@@ -235,6 +235,8 @@ static inline void microbit_sapanic_display( const uint8_t *bytes)
 }
 
 
+#if microbit_sapanic_ITERATIONS
+
 void microbit_sapanic( int code, int iterations)
 {
     microbit_sapanic_configure();
@@ -256,3 +258,22 @@ void microbit_sapanic( int code, int iterations)
         }
     }
 }
+
+#else // microbit_sapanic_ITERATIONS
+
+void microbit_sapanic( int code)
+{
+    microbit_sapanic_configure();
+    microbit_sapanic_clear();
+    
+    while ( 1)
+    {
+        for ( int msgIdx = 0; msgIdx < microbit_sapanic_MSGLEN; msgIdx++)
+        {
+            microbit_sapanic_display( microbit_sapanic_msg_font_bytes( code, msgIdx));
+            microbit_sapanic_wait( microbit_sapanic_CHARDELAY);
+        }
+    }
+}
+
+#endif // microbit_sapanic_ITERATIONS

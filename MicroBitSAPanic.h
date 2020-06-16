@@ -38,7 +38,15 @@ extern "C" {
  * @param   code        A number between 0 and 999
  * @param   iterations  Number of times to show the message or zero to show forever
  */
+#if microbit_sapanic_ITERATIONS
+
 extern void microbit_sapanic( int statusCode, int iterations);
+
+#else // microbit_sapanic_ITERATIONS
+
+extern void microbit_sapanic( int statusCode);
+
+#endif // microbit_sapanic_ITERATIONS
 
 
 #ifdef __cplusplus
