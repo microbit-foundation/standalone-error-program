@@ -28,7 +28,7 @@
 
 #include "MicroBitSAPanic.h"
 
-#define SAEP_MAGIC 0x50454153  //SAEP
+#define SAEP_MAGIC 0xFACEC0DE
 
 
 // Hex and binary will contain 53 41 45 50 (SAEP)
