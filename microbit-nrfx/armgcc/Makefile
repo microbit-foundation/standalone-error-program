@@ -34,6 +34,7 @@ LIB_FILES += \
 # Optimization flags
 OPT = -Os -g3
 # Uncomment the line below to enable link time optimization
+# Not using LTO because it removes main_forever.c: paramStr params
 #OPT += -flto
 
 # C flags common to all targets
