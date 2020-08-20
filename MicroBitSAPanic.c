@@ -108,12 +108,12 @@ SOFTWARE.
 
 // length of message: face, E, code digit, code digit, code digit
 #ifndef microbit_sapanic_MSGLEN
-#define microbit_sapanic_MSGLEN         5
+#define microbit_sapanic_MSGLEN         4
 #endif
 
 // position of first code digit
 #ifndef microbit_sapanic_MSG1STDIGIT
-#define microbit_sapanic_MSG1STDIGIT    2
+#define microbit_sapanic_MSG1STDIGIT    1
 #endif
 
 // divisor for first digit
@@ -138,7 +138,7 @@ SOFTWARE.
 
 // Delay cycles after each character
 #ifndef microbit_sapanic_CHARDELAY
-#define microbit_sapanic_CHARDELAY      100000
+#define microbit_sapanic_CHARDELAY      1000000 // 100000000ul == 20s
 #endif
 
 
@@ -176,7 +176,7 @@ static inline const uint8_t *microbit_sapanic_msg_font_bytes( int code, int msgI
             d /= microbit_sapanic_DIVBASE;
         return pendolino3_digits + MICROBIT_FONT_WIDTH * ( ( code / d) % microbit_sapanic_DIVBASE);
     }
-    return msgIdx ? pendolino3_E : c_face;
+    return c_face;
 }
 
 

@@ -40,12 +40,6 @@ const unsigned char pendolino3_digits[ MICROBIT_FONT_WIDTH * 10] =
     0xe, 0xd1, 0x2e, 0xc4, 0x88
 };
 
-
-const unsigned char pendolino3_E[ MICROBIT_FONT_WIDTH] =
-{
-    0x1e, 0xd0, 0x1c, 0x90, 0x1e
-};
-
 /**
   * Class definition for a MicrobitFont
   * This class represents a font that can be used by the display to render text.
