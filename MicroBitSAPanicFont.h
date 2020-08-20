@@ -37,8 +37,6 @@ DEALINGS IN THE SOFTWARE.
 
 extern const unsigned char pendolino3_digits[ MICROBIT_FONT_WIDTH * 10];
 
-extern const unsigned char pendolino3_E[ MICROBIT_FONT_WIDTH];
-
 //
 ///**
 //  * Class definition for a MicrobitFont
