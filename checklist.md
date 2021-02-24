@@ -42,11 +42,11 @@ In any case, it's important to make it easy for users and contributors of our pr
   - For more information on the use of SPDX identifiers, see: https://spdx.org/ids or https://spdx.org/ids-how
 - [ ] 2.3 **Identify the inbound and outbound license in the README:** Include a short, concise statement as to the outbound license in the README, preferably in a section called “license” and link to the LICENSE file and CONTRIBUTING file as appropriate.
 - [ ] 2.4 **Identify the inbound and outbound license on the project’s website (if applicable):**  Include a short, concise statement as to the outbound and inbound license in a conspicuous place on the project’s website, if there is one. This can be simply the same statement used in the README, with the appropriate links.
-- [ ] 2.5 **Contributing file:** Place a file at the top-level directory called CONTRIBUTING or CONTRIBUTING.md, which include information about how to contribute to your project, coding standards, as well as the inbound license information. Also include instructions for contributors to add their name (if they so wish) to the CONTRIBUTORS file.
-- [ ] 2.6 **Contributors file (optional):** Place a file at the top-level directory called CONTRIBUTORS, which includes a self-maintained list of names and email addresses of contributors.
+- [x] 2.5 **Contributing file:** Place a file at the top-level directory called CONTRIBUTING or CONTRIBUTING.md, which include information about how to contribute to your project, coding standards, as well as the inbound license information. Also include instructions for contributors to add their name (if they so wish) to the CONTRIBUTORS file.
+- [x] 2.6 **Contributors file (optional):** Place a file at the top-level directory called CONTRIBUTORS, which includes a self-maintained list of names and email addresses of contributors.
     - GitHub also tracks contributors, so this could be used as well.
-- [ ] 2.7 **Identify inclusion of third-party open source code:** If our open source project incorporates third-party open source code in the repository, users will want to know about this especially if the third-party code uses a different open source license than the project.  There is no one way to identify third-party code and its license. The best way may depend on how the repository is structured or how much third-party open source code is incorporated. We might put a statement in our README, put all third-party code in a specific directory, or both.  Be sure to include the full license text for the third-party code as well and name these files with a project or license naming scheme to avoid confusion with the main project license. The end-goal here is to make it easy to know what is there without requiring our users to run a scan and audit of our code to find out.
-- [ ] 2.8 **License for additional documentation:** If the project has extensive additional documentation beyond the README, use a license notice in the file or document and place a full copy of the license text in the associated directory following the same advice as above. Where images of the micro:bit or logos are used, consider including a reference to the Community Guidelines page and a friendly reminder about the rules for working with our brand. 
+- [x] 2.7 **Identify inclusion of third-party open source code:** If our open source project incorporates third-party open source code in the repository, users will want to know about this especially if the third-party code uses a different open source license than the project.  There is no one way to identify third-party code and its license. The best way may depend on how the repository is structured or how much third-party open source code is incorporated. We might put a statement in our README, put all third-party code in a specific directory, or both.  Be sure to include the full license text for the third-party code as well and name these files with a project or license naming scheme to avoid confusion with the main project license. The end-goal here is to make it easy to know what is there without requiring our users to run a scan and audit of our code to find out.
+- [x] 2.8 **License for additional documentation:** If the project has extensive additional documentation beyond the README, use a license notice in the file or document and place a full copy of the license text in the associated directory following the same advice as above. Where images of the micro:bit or logos are used, consider including a reference to the Community Guidelines page and a friendly reminder about the rules for working with our brand. 
 
 
 ## 3. Project Information
@@ -64,7 +64,7 @@ In any case, it's important to make it easy for users and contributors of our pr
 - [x] 3.5 GitHub Releases are used to mark releases and releases are git tagged with a description.
 - [x] 3.6 Changes for each release are captured, either in a CHANGELOG file at the top-level directory, or within the GitHub release descriptions.
 - [x] 3.7 There is a `.gitignore` file excluding everything we don’t want versioned.
-- [ ] 3.8 There are contributing guidelines (preferably in a CONTRIBUTING file) that communicate ways to contribute, any guidance regarding contributing (e.g., relevant coding standards) or related information. 
+- [x] 3.8 There are contributing guidelines (preferably in a CONTRIBUTING file) that communicate ways to contribute, any guidance regarding contributing (e.g., relevant coding standards) or related information. 
 - [ ] 3.9 (Optional) Add topics to the repository.
 - [ ] 3.10 (Optional) Add issue templates for common contributions as appropriate or relevant.
 - [ ] 3.11 (Optional) Add PR templates for common contributions as appropriate or relevant.
@@ -88,8 +88,8 @@ Check commits, documentation, code and go through the git history to check for t
 
 ## 6. Code of Conduct
 
-- [ ] 6.1 Include a section in the README for the Code of Conduct and link to the Foundation Code Of Conduct.
-- [ ] 6.2 If there is a project website, include information about the Code of Conduct with the appropriate links.
+- [x] 6.1 Include a section in the README for the Code of Conduct and link to the Foundation Code Of Conduct.
+- [-] 6.2 If there is a project website, include information about the Code of Conduct with the appropriate links.
 
 
 ## 7. Security
