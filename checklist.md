@@ -57,9 +57,9 @@ In any case, it's important to make it easy for users and contributors of our pr
     - [x] Project description.
     - [x] Project introduction.
     - [ ] Inbound and Outbound licenses (more info in the "2. Licensing Information" section).
-    - [ ] Links to relevant documentation or information.
-    - [ ] Link to the Code Of Conduct.
-- [ ] 3.3 Where applicable, ensure there is appropriate additional documentation (e.g., technical documentation, webpage source, etc.).
+    - [x] Links to relevant documentation or information.
+    - [x] Link to the Code Of Conduct.
+- [x] 3.3 Where applicable, ensure there is appropriate additional documentation (e.g., technical documentation, webpage source, etc.).
 - [x] 3.4 The project is versioned (the preferred versioning system is Semantic Versioning 2.0.0).
 - [x] 3.5 GitHub Releases are used to mark releases and releases are git tagged with a description.
 - [x] 3.6 Changes for each release are captured, either in a CHANGELOG file at the top-level directory, or within the GitHub release descriptions.
