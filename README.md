@@ -18,7 +18,3 @@ The license for nrfx can be found [here](https://github.com/microbit-foundation/
 
 Any other files were created by the Micro:bit Educational Foundation and are MIT licensed.
 
-# Code Of Conduct
-
-[Code of conduct](https://microbit.org/terms-of-use/#the-micro:bit-educational-foundation-code-of-conduct) for contributing.
-

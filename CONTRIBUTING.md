@@ -7,5 +7,3 @@ https://github.com/microbit-foundation/standalone-error-program
 
 If you're interested in working on any of these items, please file an issue and tag @microbit-sam, @microbit-carlos, or @microbit-pauline.
 
-[Code of conduct](https://microbit.org/terms-of-use/#the-micro:bit-educational-foundation-code-of-conduct) for contributing.
-
