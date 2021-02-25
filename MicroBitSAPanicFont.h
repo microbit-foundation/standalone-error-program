@@ -1,5 +1,6 @@
 /*
 The MIT License (MIT)
+SPDX-License-Identifier: MIT
 
 Copyright (c) 2016 British Broadcasting Corporation.
 This software is provided by Lancaster University by arrangement with the BBC.
