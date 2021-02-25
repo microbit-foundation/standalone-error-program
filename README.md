@@ -11,7 +11,7 @@ Install the arm-none-eabi-\* command line utilities for ARM based devices and en
 
 Install CMake(Cross platform make), this is the entirety of the build system. If on Windows, install ninja.
 
-Install Python 2.7 (if you are unfamiliar with CMake), python scripts are used to simplify the build process.
+Install Python (if you are unfamiliar with CMake), python scripts are used to simplify the build process.
 
 Clone this repository
 
