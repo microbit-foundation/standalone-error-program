@@ -1,7 +1,7 @@
 import subprocess
 import shutil
 import os
-
+import re
 
 # names and paths
 
@@ -9,6 +9,7 @@ folder_make  = "microbit-nrfx/ram-armgcc"
 folder_build = folder_make + "/_build"
 folder_built = "ram-built"
 
+file_ld  = "gcc_nrf52.ld"
 file_bin = "nrfx_nrf52833_xxaa.bin"
 file_hex = "nrfx_nrf52833_xxaa.hex"
 file_hdr = "ram_led_error.h"
@@ -16,6 +17,7 @@ cvar_name = "ram_led_error"
 
 slash = "/"
 
+from_ld  = folder_make  + slash + file_ld
 from_bin = folder_build + slash + file_bin
 from_hex = folder_build + slash + file_hex
 
@@ -50,10 +52,28 @@ if os.path.isfile( from_hex):
   shutil.copy2( from_hex, to_hex)
 
 
+# find ORIGIN in linker script
+origin = ''
+
+pattern = re.compile(r'FLASH.*ORIGIN *= *(\w*) *,')
+
+with open( from_ld, 'r') as ld:
+    for line in ld:
+        found = pattern.search( line)
+        if found:
+            print(line)
+            origin = found.group(1)
+
+if origin == "":
+    print( "ORIGIN not found")
+    origin = '0x20010000'
+
+print( "ORIGIN = " + origin)
+
 # create a C header from the bin
 
 with open( to_bin, 'r') as f:
-  bin = f.read();
+    bin = f.read();
 
 code = bin.find("\xde\xc0\xce\xfa") + 4
 
@@ -66,7 +86,7 @@ if code >= 0:
     hdr += "unsigned int " + cvar_name + "_code = {};\r\n\r\n".format( code)
     
 hdr += "// Address of code\r\n"
-hdr += "unsigned int " + cvar_name + "_address = 0x20010000;\r\n\r\n"
+hdr += "unsigned int " + cvar_name + "_address = " + origin + ";\r\n\r\n"
     
 hdr += "unsigned char " + cvar_name + "_data[] = {\r\n  "
 
