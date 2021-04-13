@@ -1,4 +1,5 @@
 **/armgcc/_build/
+**/ram-armgcc/_build/
 **/ses/Output/
 *.emSession
 *.jlink
