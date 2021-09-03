@@ -52,30 +52,30 @@ if os.path.isfile( from_hex):
 
 # create a C header from the bin
 
-with open( to_bin, 'r') as f:
+with open( to_bin, 'rb') as f:
   bin = f.read();
 
-code = bin.find("\xde\xc0\xce\xfa") + 4
+code = bin.find(b"\xde\xc0\xce\xfa") + 4
 
-hdr =  "// Program to display error code 0-999 on LEDs: face,E,digit,digit,digit\r\n\r\n"
+hdr =  "// Program to display error code 0-999 on LEDs: face,E,digit,digit,digit\n\n"
 
-hdr += "unsigned int " + cvar_name + "_len = {};\r\n\r\n".format( len(bin))
+hdr += "unsigned int " + cvar_name + "_len = {};\n\n".format( len(bin))
 
 if code >= 0:
-    hdr += "// Offset of 2 byte error code, low byte first\r\n"
-    hdr += "unsigned int " + cvar_name + "_code = {};\r\n\r\n".format( code)
+    hdr += "// Offset of 2 byte error code, low byte first\n"
+    hdr += "unsigned int " + cvar_name + "_code = {};\n\n".format( code)
     
-hdr += "unsigned char " + cvar_name + "_data[] = {\r\n  "
+hdr += "unsigned char " + cvar_name + "_data[] = {\n  "
 
 idx = 0
 
 for b in bin:
-    hdr += "0x{0:02x}".format(ord(b));
+    hdr += "0x{0:02x}".format(b);
     if idx == len(bin) - 1:
-      hdr += "\r\n"
-      hdr += "};\r\n"
+      hdr += "\n"
+      hdr += "};\n"
     elif idx % 12 == 11:
-      hdr += ",\r\n  "
+      hdr += ",\n  "
     else:
       hdr += ", "
     idx = idx + 1
